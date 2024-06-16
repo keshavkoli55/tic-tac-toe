@@ -25,6 +25,7 @@ body{
 }
 
 .btn{
+    background-color:azure;
     height: 15vh;
     width: 22vh;
     font-size: 10vh;
@@ -41,5 +42,5 @@ body{
     color:azure;
     border:none;
     font-size: 1.25rem;
-    border-radius: 1rem;
+    border-radius: 1rem;;
 }
