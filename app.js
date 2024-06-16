@@ -25,8 +25,22 @@ boxes.forEach((btn) => {
         }
 
         btn.disabled=true;
+        checkWinner();
     })
 })
 resetBtn.addEventListener("click",()=>{
     console.log("reset is clicked")
 })
+
+function checkWinner(){
+    for(let pattern of winPatterns){
+         pos1val=boxes[pattern[0]].innerText;
+         pos2val=boxes[pattern[1]].innerText;
+         pos3val=boxes[pattern[2]].innerText;
+         if(pos1val !="" && pos2val != "" && pos3val != ""){
+             if(pos1val===pos2val && pos2val===pos3val){
+                 console.log("winner",pos1val);
+             }
+    }
+    }
+}
