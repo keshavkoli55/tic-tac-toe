@@ -2,7 +2,10 @@ let boxes = document.querySelectorAll(".btn");
 let resetBtn = document.querySelector("#reset-btn");
 let MsgWinner =document.querySelector('.msg-container')
 let win_msg =document.querySelector('#win-msg')
+let draw_msg_container =document.querySelector('.draw-msg-container')
 let win_btn =document.querySelector('#win-btn')
+let new_btn =document.querySelector('#new-btn')
+// let draw_msg =document.querySelector('#draw-msg')
 let turn_Zero = true;
 const winPatterns = [
   [0, 1, 2],
@@ -20,23 +23,35 @@ const ResetBoxes=()=>{
     box.innerText="";
     box.disabled=false;
     MsgWinner.classList.add("hide");
+    draw_msg_container.classList.add("hide"); 
+    count=0;
   }
+
 }
 const DisableBoxes=()=>{
   for(box of boxes){
     box.disabled=true;
   }
 }
-resetBtn.addEventListener("click", (ResetBoxes));
+let count=0;
 win_btn.addEventListener("click", (ResetBoxes));
+resetBtn.addEventListener("click", (ResetBoxes));
+new_btn.addEventListener("click", (ResetBoxes));
 boxes.forEach((btn) => {
   btn.addEventListener("click", () => {
-    console.log("button was clicked");
     if (turn_Zero) {
       btn.innerText = "0";
       turn_Zero = false;
+      btn.style.color="black";
+      count++;
+      if(count=="9"){
+        count=0;
+        draw_msg_container.classList.remove("hide");
+      }
     } else {
       btn.innerText = "X";
+      btn.style.color="red";
+      count++;
       turn_Zero = true;
     }
     checkWinner();
