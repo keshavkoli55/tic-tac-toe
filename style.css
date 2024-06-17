@@ -3,7 +3,7 @@
     margin: 0%;
 }
 body{
-  margin-top:1.5rem ;
+  margin-top:1rem ;
   text-align: center;
   background-color: cadetblue;
 }
@@ -43,4 +43,22 @@ body{
     border:none;
     font-size: 1.25rem;
     border-radius: 1rem;;
+}
+#win-btn{
+    padding:0.75rem;
+    background-color: chocolate;
+    color:azure;
+    border:none;
+    font-size: 1rem;
+    border-radius: 1rem;
+}
+.msg-container{
+    height:18vmin;
+}
+#win-msg{
+    color:azure;
+    font-size: 5vmin;
+}
+.hide{
+    display: none;
 }
